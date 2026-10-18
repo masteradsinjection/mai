@@ -38,7 +38,7 @@ export function Footer() {
                 href={siteConfig.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
+                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-all hover:scale-110 active:scale-95"
                 aria-label="GitHub Repository"
               >
                 <Github className="w-4 h-4" />
@@ -47,7 +47,7 @@ export function Footer() {
                 href={siteConfig.links.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
+                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-all hover:scale-110 active:scale-95"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
@@ -56,7 +56,7 @@ export function Footer() {
                 href={siteConfig.links.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
+                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-all hover:scale-110 active:scale-95"
                 aria-label="Twitter / X"
               >
                 <Twitter className="w-4 h-4" />

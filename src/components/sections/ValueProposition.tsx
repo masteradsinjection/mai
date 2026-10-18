@@ -69,12 +69,14 @@ export function ValueProposition() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {pillars.map((pillar, index) => (
-            <Card key={index} className="border-slate-200/80 bg-white">
+            <Card key={index} className="border-slate-200/80 bg-white group hover:border-blue-300 transition-all duration-300">
               <CardHeader>
-                <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-4 border border-blue-100">
-                  {pillar.icon}
+                <div className="w-12 h-12 rounded-xl bg-blue-50 group-hover:bg-blue-600 transition-all duration-300 flex items-center justify-center mb-4 border border-blue-100 group-hover:border-blue-500 group-hover:scale-105">
+                  {React.cloneElement(pillar.icon, {
+                    className: "w-6 h-6 text-blue-600 group-hover:text-white transition-colors",
+                  })}
                 </div>
-                <CardTitle>{pillar.title}</CardTitle>
+                <CardTitle className="group-hover:text-blue-600 transition-colors">{pillar.title}</CardTitle>
                 <CardDescription>{pillar.description}</CardDescription>
               </CardHeader>
               <CardContent>

@@ -36,7 +36,7 @@ export function PortfolioPreview() {
           {portfolioProjects.map((project) => (
             <Card
               key={project.id}
-              className="flex flex-col justify-between border-slate-200/90 hover:border-blue-300"
+              className="flex flex-col justify-between border-slate-200/90 hover:border-blue-300 group transition-all duration-300"
             >
               <div>
                 <CardHeader>
@@ -81,10 +81,10 @@ export function PortfolioPreview() {
               <CardFooter className="pt-4 border-t border-slate-100">
                 <Link
                   href={`/portfolio/${project.slug}`}
-                  className="text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1"
+                  className="text-xs font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1 group-hover:gap-1.5 transition-all"
                 >
                   <span>Read Full Case Study</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </Link>
               </CardFooter>
             </Card>

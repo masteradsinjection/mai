@@ -89,14 +89,14 @@ export function TrackingVisualizer() {
               type="button"
               onClick={() => setActiveNode(node.id)}
               className={cn(
-                "p-4 rounded-xl text-left border transition-all cursor-pointer relative",
+                "p-4 rounded-xl text-left border transition-all duration-300 cursor-pointer relative hover:-translate-y-0.5",
                 isSelected
-                  ? "bg-slate-800/90 border-blue-500 shadow-md ring-1 ring-blue-500/50"
+                  ? "bg-slate-800/90 border-blue-500 shadow-md ring-1 ring-blue-500/50 scale-[1.01]"
                   : "bg-slate-950/50 border-slate-800 hover:border-slate-700 hover:bg-slate-800/40"
               )}
             >
               <div className="flex items-center justify-between gap-2 mb-2">
-                <div className="p-2 rounded-lg bg-blue-950/80 border border-blue-900/60">
+                <div className="p-2 rounded-lg bg-blue-950/80 border border-blue-900/60 transition-transform group-hover:scale-105">
                   {node.icon}
                 </div>
                 <span className="text-[11px] font-mono font-medium text-blue-300 bg-blue-950/60 px-2 py-0.5 rounded">
@@ -114,7 +114,7 @@ export function TrackingVisualizer() {
       </div>
 
       {/* Node Details Inspection Card */}
-      <div className="p-5 md:p-6 rounded-xl bg-slate-800/60 border border-slate-700/80">
+      <div key={currentNode.id} className="p-5 md:p-6 rounded-xl bg-slate-800/60 border border-slate-700/80 animate-fade-in">
         <div className="flex items-center gap-2 mb-3">
           <div className="p-1.5 rounded-md bg-blue-600 text-white">
             <Check className="w-3.5 h-3.5" />

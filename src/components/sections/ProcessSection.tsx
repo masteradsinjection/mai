@@ -57,15 +57,17 @@ export function ProcessSection() {
           {steps.map((item) => (
             <div
               key={item.step}
-              className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-subtle hover:shadow-card hover:border-blue-200 transition-all flex flex-col justify-between"
+              className="p-6 rounded-2xl bg-white border border-slate-200/80 shadow-subtle hover:shadow-card-hover hover:border-blue-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-default"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <span className="text-2xl font-black text-blue-600 font-mono">
+                  <span className="text-2xl font-black text-blue-600 font-mono group-hover:scale-105 transition-transform">
                     {item.step}
                   </span>
-                  <div className="p-2.5 rounded-xl bg-blue-50 border border-blue-100">
-                    {item.icon}
+                  <div className="p-2.5 rounded-xl bg-blue-50 border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    {React.cloneElement(item.icon, {
+                      className: "w-5 h-5 text-blue-600 group-hover:text-white transition-colors",
+                    })}
                   </div>
                 </div>
 

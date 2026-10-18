@@ -8,9 +8,9 @@ export function ConsultationCta() {
   return (
     <section className="py-20 md:py-28 bg-white relative overflow-hidden">
       <Container>
-        <div className="relative rounded-3xl bg-gradient-to-br from-blue-900 via-blue-950 to-slate-950 text-white p-8 sm:p-12 md:p-16 shadow-2xl overflow-hidden border border-blue-900/60">
+        <div className="relative rounded-3xl bg-gradient-to-br from-blue-900 via-blue-950 to-slate-950 text-white p-8 sm:p-12 md:p-16 shadow-2xl overflow-hidden border border-blue-900/60 transition-all duration-300 hover:border-blue-700/80">
           {/* Subtle background glow */}
-          <div className="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 -mt-12 -mr-12 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl pointer-events-none animate-pulse-subtle" />
 
           <div className="max-w-3xl relative z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-800/60 border border-blue-700/60 text-blue-200 text-xs font-semibold mb-6">

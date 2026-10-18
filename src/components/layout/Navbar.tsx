@@ -235,11 +235,17 @@ export function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          className="md:hidden fixed inset-x-0 top-20 bg-white border-b border-slate-200 shadow-2xl p-6 transition-all animate-fade-in max-h-[calc(100vh-5rem)] overflow-y-auto"
-        >
+        <>
+          <div
+            className="md:hidden fixed inset-0 top-20 bg-slate-900/30 backdrop-blur-xs z-30 animate-fade-in"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+          <div
+            role="dialog"
+            aria-modal="true"
+            className="md:hidden fixed inset-x-0 top-20 bg-white border-b border-slate-200 shadow-2xl p-6 transition-all animate-fade-down z-40 max-h-[calc(100vh-5rem)] overflow-y-auto"
+          >
           <div className="flex flex-col space-y-3 pb-6 border-b border-slate-100">
             <Link
               href="/"
@@ -326,6 +332,7 @@ export function Navbar() {
             </div>
           </div>
         </div>
+        </>
       )}
     </header>
   );
