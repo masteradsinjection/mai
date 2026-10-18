@@ -27,7 +27,8 @@ export function ContactForm() {
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
-    type: "success" | "error" | null;
+    type: "success" | "staging" | "error" | null;
+    heading?: string;
     message: string;
   }>({ type: null, message: "" });
 
@@ -83,8 +84,12 @@ export function ContactForm() {
       const result = await response.json();
 
       if (response.ok && result.success) {
+        const isStaging = result.status === "received_staging";
         setSubmitStatus({
-          type: "success",
+          type: isStaging ? "staging" : "success",
+          heading: isStaging
+            ? "Inquiry Logged (Local Staging Mode)"
+            : "Inquiry Successfully Dispatched",
           message: result.message || "Thank you! Your inquiry has been received.",
         });
 
@@ -142,6 +147,28 @@ export function ContactForm() {
         </p>
       </div>
 
+      {submitStatus.type === "staging" && (
+        <div
+          role="alert"
+          className="mb-8 p-5 rounded-2xl bg-blue-50 border border-blue-200 text-blue-950 flex items-start gap-3 animate-fade-in"
+        >
+          <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+          <div>
+            <div className="flex items-center gap-2">
+              <h4 className="font-semibold text-sm">
+                {submitStatus.heading || "Inquiry Logged (Staging Mode)"}
+              </h4>
+              <span className="text-[10px] font-mono font-bold bg-blue-200/70 text-blue-800 px-2 py-0.5 rounded">
+                Staging
+              </span>
+            </div>
+            <p className="text-xs text-blue-800 mt-1 leading-relaxed">
+              {submitStatus.message}
+            </p>
+          </div>
+        </div>
+      )}
+
       {submitStatus.type === "success" && (
         <div
           role="alert"
@@ -149,7 +176,9 @@ export function ContactForm() {
         >
           <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
           <div>
-            <h4 className="font-semibold text-sm">Inquiry Received</h4>
+            <h4 className="font-semibold text-sm">
+              {submitStatus.heading || "Inquiry Dispatched"}
+            </h4>
             <p className="text-xs text-emerald-700 mt-1 leading-relaxed">
               {submitStatus.message}
             </p>

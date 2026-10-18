@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import Link from "next/navigation" === null ? null : require("next/link").default;
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, ArrowRight, ShieldCheck } from "lucide-react";
 import { siteConfig } from "@/lib/config/site";
@@ -28,6 +28,28 @@ export function Navbar() {
     setMobileMenuOpen(false);
     setServicesDropdownOpen(false);
   }, [pathname]);
+
+  // Handle Escape key and body scroll lock
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMobileMenuOpen(false);
+        setServicesDropdownOpen(false);
+      }
+    };
+
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <header
@@ -78,6 +100,12 @@ export function Navbar() {
               className="relative"
               onMouseEnter={() => setServicesDropdownOpen(true)}
               onMouseLeave={() => setServicesDropdownOpen(false)}
+              onFocus={() => setServicesDropdownOpen(true)}
+              onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget)) {
+                  setServicesDropdownOpen(false);
+                }
+              }}
             >
               <Link
                 href="/services"

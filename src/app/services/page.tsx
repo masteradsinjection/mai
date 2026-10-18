@@ -59,7 +59,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {servicesData.map((service) => (\r
+            {servicesData.map((service) => (
               <div
                 key={service.id}
                 className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-card transition-all flex flex-col justify-between"
