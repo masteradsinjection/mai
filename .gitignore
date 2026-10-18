@@ -3,6 +3,12 @@
 /.next/
 /out/
 /build
+
+# local env files
 .env*.local
 .env
 !.env.example
+
+# typescript & build info
+*.tsbuildinfo
+next-env.d.ts

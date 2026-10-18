@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" fill="none">
+  <rect width="70" height="70" x="15" y="15" rx="18" fill="#2563EB"/>
+  <path d="M30 65V35L50 51L70 35V65" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="105" y="52" fill="#0F172A" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="800" letter-spacing="-0.5">Master Ads Injection</text>
+  <text x="105" y="74" fill="#64748B" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" letter-spacing="1">PAID ADS &amp; TRACKING ARCHITECTURE</text>
+</svg>

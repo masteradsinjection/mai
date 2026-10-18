@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0F172A"/>
+  <circle cx="1100" cy="100" r="400" fill="#2563EB" fill-opacity="0.15" filter="blur(80px)"/>
+  <circle cx="200" cy="550" r="300" fill="#3B82F6" fill-opacity="0.1" filter="blur(60px)"/>
+
+  <!-- Logo mark -->
+  <rect x="120" y="120" width="100" height="100" rx="26" fill="#2563EB"/>
+  <path d="M142 190V150L170 172L198 150V190" stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Brand Typography -->
+  <text x="245" y="172" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="38" font-weight="800">Master Ads Injection</text>
+  <text x="245" y="202" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="600" letter-spacing="2">PAID ADVERTISING &amp; SERVER-SIDE TRACKING</text>
+
+  <!-- Tagline Headline -->
+  <text x="120" y="340" fill="#FFFFFF" font-family="Inter, system-ui, sans-serif" font-size="64" font-weight="900" letter-spacing="-1.5">Turn Ad Spend Into</text>
+  <text x="120" y="415" fill="#60A5FA" font-family="Inter, system-ui, sans-serif" font-size="64" font-weight="900" letter-spacing="-1.5">Measurable Growth.</text>
+
+  <!-- Subtitle -->
+  <text x="120" y="485" fill="#94A3B8" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400">Google Ads • Meta Ads • Server-Side GTM • GA4 BigQuery Telemetry</text>
+
+  <!-- Bottom Badges -->
+  <rect x="120" y="525" width="260" height="36" rx="18" fill="#1E293B" stroke="#334155"/>
+  <text x="140" y="548" fill="#38BDF8" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">✓ 100% Client Data Ownership</text>
+
+  <rect x="400" y="525" width="240" height="36" rx="18" fill="#1E293B" stroke="#334155"/>
+  <text x="420" y="548" fill="#34D399" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600">✓ Consent Mode v2 Active</text>
+</svg>
