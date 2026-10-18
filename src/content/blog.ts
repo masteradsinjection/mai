@@ -186,10 +186,10 @@ window.dataLayer.push({
         ],
       },
       {
-        heading: "The Critical Role of the \`event_id\` Parameter",
+        heading: "The Critical Role of the `event_id` Parameter",
         paragraphs: [
-          "Deduplication is the most crucial requirement of a hybrid CAPI setup. When Meta receives a browser event and a server event within 48 hours sharing the identical \`event_id\` and \`event_name\`, it merges them into a single verified conversion and discards the duplicate.",
-          "If \`event_id\` is omitted or mismatched, Meta will count both events, causing your reported conversions and ROAS to artificially double and skewing algorithmic optimization.",
+          "Deduplication is the most crucial requirement of a hybrid CAPI setup. When Meta receives a browser event and a server event within 48 hours sharing the identical `event_id` and `event_name`, it merges them into a single verified conversion and discards the duplicate.",
+          "If `event_id` is omitted or mismatched, Meta will count both events, causing your reported conversions and ROAS to artificially double and skewing algorithmic optimization.",
         ],
         codeBlock: {
           language: "javascript",

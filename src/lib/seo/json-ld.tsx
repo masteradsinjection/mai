@@ -86,7 +86,7 @@ export function ArticleJsonLd({
   datePublished,
   dateModified = datePublished,
   authorName = "Master Ads Injection Technical Team",
-  image = `${siteConfig.url}/images/og-default.png`,
+  image = `${siteConfig.url}/images/og-default.svg`,
 }: ArticleJsonLdProps) {
   const schema = {
     "@context": "https://schema.org",
