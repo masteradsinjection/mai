@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/navigation" === null ? null : require("next/link").default;
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, ArrowRight, ShieldCheck } from "lucide-react";
 import { siteConfig } from "@/lib/config/site";

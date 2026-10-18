@@ -105,7 +105,7 @@ export function BlogListing({ posts }: BlogListingProps) {
                 <div className="flex items-center justify-between gap-2 mb-3">
                   <Badge variant="blue">{post.category}</Badge>
                   <span className="text-[11px] text-slate-500 flex items-center gap-1">
-                    <Clock className="w-3 3" />
+                    <Clock className="w-3 h-3" />
                     {post.readingTime}
                   </span>
                 </div>
