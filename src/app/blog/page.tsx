@@ -7,8 +7,7 @@ import { blogPosts, BlogPost } from "@/content/blog";
 import { formatDate } from "@/lib/utils";
 import { Container } from "@/components/layout/Container";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/Card";
-import { Badge } from "@/components/ui/Badge";
+import { BlogListing } from "@/components/sections/BlogListing";
 import { ConsultationCta } from "@/components/sections/ConsultationCta";
 
 export const metadata: Metadata = constructMetadata({
@@ -100,72 +99,19 @@ export default function BlogListingPage() {
         </section>
       )}
 
-      {/* Regular Posts Grid */}
+      {/* Interactive Guides & Search */}
       <section className="py-16 bg-slate-50/50 border-t border-slate-200/80">
         <Container>
-          <div className="mb-10">
+          <div className="mb-8">
             <h3 className="text-xl font-bold text-slate-900 tracking-tight">
               All Technical Guides & Tutorials
             </h3>
+            <p className="text-xs text-slate-500 mt-1">
+              Filter by engineering domain or search across implementation blueprints.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {regularPosts.map((post) => (
-              <Card
-                key={post.slug}
-                className="flex flex-col justify-between border-slate-200 hover:border-blue-300 transition-all bg-white"
-              >
-                <div>
-                  <CardHeader>
-                    <div className="flex items-center justify-between gap-2 mb-3">
-                      <Badge variant="blue">{post.category}</Badge>
-                      <span className="text-[11px] text-slate-500 flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
-                        {post.readingTime}
-                      </span>
-                    </div>
-
-                    <CardTitle className="text-base sm:text-lg">
-                      <Link
-                        href={`/blog/${post.slug}`}
-                        className="hover:text-blue-600 transition-colors"
-                      >
-                        {post.title}
-                      </Link>
-                    </CardTitle>
-
-                    <CardDescription className="text-xs mt-2 line-clamp-3">
-                      {post.excerpt}
-                    </CardDescription>
-                  </CardHeader>
-
-                  <CardContent className="pt-0">
-                    <div className="pt-3 border-t border-slate-100 flex flex-wrap gap-1.5">
-                      {post.tags.slice(0, 3).map((tag, idx) => (
-                        <span
-                          key={idx}
-                          className="text-[10px] text-slate-600 bg-slate-100 px-2 py-0.5 rounded"
-                        >
-                          #{tag}
-                        </span>
-                      ))}
-                    </div>
-                  </CardContent>
-                </div>
-
-                <CardFooter className="pt-4 border-t border-slate-100 text-xs text-slate-500">
-                  <span>{formatDate(post.publishedAt)}</span>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="font-semibold text-blue-600 hover:text-blue-800 flex items-center gap-1"
-                  >
-                    <span>Read</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
+          <BlogListing posts={blogPosts} />
         </Container>
       </section>
 
