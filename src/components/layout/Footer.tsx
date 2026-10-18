@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Mail, Globe, ShieldCheck, ArrowUpRight, Github, Linkedin, Twitter } from "lucide-react";
 import { siteConfig } from "@/lib/config/site";
 import { Container } from "./Container";
+import { CookiePreferencesButton } from "./CookiePreferencesButton";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -226,6 +227,7 @@ export function Footer() {
             <Link href="/sitemap" className="hover:text-white transition-colors">
               Sitemap
             </Link>
+            <CookiePreferencesButton />
           </div>
         </div>
       </Container>

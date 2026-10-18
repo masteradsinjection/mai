@@ -23,6 +23,24 @@ export function CookieConsent() {
         setSettings(DEFAULT_CONSENT);
       }
     }
+
+    const handleOpenPreferences = () => {
+      setIsModalOpen(true);
+    };
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsModalOpen(false);
+      }
+    };
+
+    window.addEventListener("mai_open_cookie_preferences", handleOpenPreferences);
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("mai_open_cookie_preferences", handleOpenPreferences);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   const saveConsent = (newSettings: ConsentSettings) => {
@@ -55,16 +73,17 @@ export function CookieConsent() {
     saveConsent(settings);
   };
 
-  if (!mounted || !isOpen) return null;
+  if (!mounted || (!isOpen && !isModalOpen)) return null;
 
   return (
     <>
       {/* Banner */}
-      <div
-        role="region"
-        aria-label="Cookie consent banner"
-        className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-2xl transition-all"
-      >
+      {isOpen && (
+        <div
+          role="region"
+          aria-label="Cookie consent banner"
+          className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-2xl transition-all"
+        >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-start gap-3.5 max-w-3xl">
             <div className="p-2.5 rounded-xl bg-blue-50 text-blue-600 shrink-0 mt-0.5">
@@ -115,6 +134,7 @@ export function CookieConsent() {
           </div>
         </div>
       </div>
+      )}
 
       {/* Preferences Modal */}
       {isModalOpen && (
